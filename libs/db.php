@@ -4,7 +4,7 @@ class DB {
     private static $instance;
     private function __construct() {}
     public static function getInstance() {
-        if (DB::$instance == null) {
+        if (self::$instance == null) {
             $host    = 'localhost';
             $db      = 'abunoor9_charity';
             $user    = 'abunoor9_charityer';
@@ -17,9 +17,9 @@ class DB {
             );
 
             $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-            DB::$instance = new PDO($dsn,$user,$pass,$opt);
+            self::$instance = new PDO($dsn,$user,$pass,$opt);
         
         }
-        return DB::$instance;
+        return self::$instance;
     }
 }

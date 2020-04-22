@@ -11,9 +11,12 @@
   RewriteCond %{REQUEST_FILENAME} !-l
   
   
-RewriteRule ^(\w*)$ /api/index.php?url=first [QSA,L]
-RewriteRule ^(\w*)/(\w+)$ /api/controllers/$1.php?action=$2 [QSA,L]
-RewriteRule ^(\w*)/(\w+)/(\w+)$ /api/controllers/$1.php?action=$2&arg=$3 [QSA,L]
+#RewriteRule ^(\w*)$ /api/index.php?url=first [QSA,L]
+#RewriteRule ^(\w*)/(\w+)$ /api/controllers/$1.php?action=$2 [QSA,L]
+#RewriteRule ^(\w*)/(\w+)/(\w+)$ /api/controllers/$1.php?action=$2&arg=$3 [QSA,L]
+
+RewriteRule ^(.*)$ /api/index.php?url=$1 [QSA,L]
+
 
 #RewriteRule ^(\w+)\/(\w+)\/(\w+)$ index.php?controller=$1&action=$2&id=$3 [QSA,L]
 
